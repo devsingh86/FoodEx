@@ -1,5 +1,5 @@
 //API data
-import * as restaurantListData from "../../json/restaurantList.json";
+import * as restaurantListData from "../API/restaurantList.json";
 
 const RestaurantCard = ({
   id,
