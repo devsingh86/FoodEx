@@ -8,12 +8,13 @@ body {
     font-size: 10px;
 }
 
-@import "scss/logo.scss";
-@import "scss/header.scss";
-@import "scss/navigation.scss";
-@import "scss/footer.scss";
-@import "scss/banner.scss";
-@import "scss/restaurantCard.scss";
+@import "../scss/logo.scss";
+@import "../scss/header.scss";
+@import "../scss/navigation.scss";
+@import "../scss/footer.scss";
+@import "../scss/banner.scss";
+@import "../scss/restaurantCard.scss";
+@import "../scss/filter-restaurants.scss";
 
 
 .mainContainer{
@@ -36,4 +37,8 @@ h1{
 }
 h2{
     font-size: 2rem;
+}
+
+.two-col-flex{
+    display: flex;
 }

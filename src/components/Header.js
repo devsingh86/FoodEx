@@ -1,3 +1,6 @@
+import logo from "../assets/logo/foodex.png";
+import logo2 from "../assets/logo/foodex-no-outline.png";
+
 const NavigationBar = () => {
   return (
     <ul className="navbar">
@@ -34,11 +37,7 @@ export const Logo = () => {
   return (
     <div className="logo-container">
       <a href="/" title="Logo">
-        <img
-          src="https://placeholder.com/wp-content/uploads/2018/10/placeholder.com-logo3.png"
-          title="FoodVilla"
-          alt="FoodVilla"
-        />
+        <img src={logo2} title="FoodEx" alt="FoodEx" />
       </a>
     </div>
   );

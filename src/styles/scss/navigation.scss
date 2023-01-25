@@ -5,7 +5,7 @@
 
     li a {
         text-decoration: none;
-        color: black;
+        color: #fff;
         font-size: 1.1rem;
         font-weight: 500;
         font-family: Montserrat;
@@ -13,6 +13,17 @@
         &:hover {
             text-decoration: none;
             color: blue;
+
+            i{
+                border-color: #fff;
+                background-color: #fff;
+                color: #fa9319;
+            }
+        }
+
+        i{
+            padding: 10px;
+            border: 1px solid;
         }
     }
 }

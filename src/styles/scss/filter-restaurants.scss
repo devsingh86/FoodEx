@@ -1,0 +1,21 @@
+.search-container{
+    display: inline-flex;
+    margin-left: auto;
+
+    .search-input{
+        padding: 10px;
+        border: 0px;
+        border: 1px solid #ccc;
+        border-right: 0;
+        min-width: 300px;
+    }
+
+    .search-button{
+        padding: 10px 20px;
+        background-color: blue;
+        color: #fff;
+        font-weight: 700;
+        border: 0px;
+        cursor: pointer;
+    }
+}
