@@ -1,5 +1,4 @@
-import logo from "../assets/logo/foodex.png";
-import logo2 from "../assets/logo/foodex-no-outline.png";
+import logo from "../assets/logo/foodex-white.png";
 
 const NavigationBar = () => {
   return (
@@ -37,7 +36,7 @@ export const Logo = () => {
   return (
     <div className="logo-container">
       <a href="/" title="Logo">
-        <img src={logo2} title="FoodEx" alt="FoodEx" />
+        <img src={logo} title="FoodEx" alt="FoodEx" />
       </a>
     </div>
   );

@@ -1,7 +1,18 @@
-.banner{
-    min-height: 550px;
-    background: url('https://img.cdn4dd.com/cdn-cgi/image/fit=cover,width=1200,format=auto,quality=60/https://cdn.doordash.com/media/consumer/home/landing/new/hero_landing_us_alt.jpg') no-repeat;
+.herosection{
+    min-height: 82vh;
+    background: url('../../assets/banner/banner.webp') no-repeat center right;
     background-size: cover ;
-    color: #fff;
-    text-align: center;
+    color: #333;
+    display: flex;
+    align-items: center;
+
+    h1{
+        font-size: 5rem;
+        font-family: "Montserrat";
+        font-weight: 800;
+
+        span{
+            color: crimson;
+        }
+    }
 }
