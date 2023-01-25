@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Public Sans";
+    font-size: 10px;
+}
+
+.mainContainer{
+    section{
+        padding: 40px 0;
+        &.full-width{
+            max-width: 100%;
+        }
+    }
+    .centerAlign{
+        width: 1200px;
+        margin: 0 auto;
+    }
+
+}
+
+//Heading tags
+h1{
+    font-size: 2.5rem;
+}
+h2{
+    font-size: 2rem;
+}
+
+.two-col-flex{
+    display: flex;
+}

@@ -4,8 +4,8 @@ const NavigationBar = () => {
   return (
     <ul className="navbar">
       <li className="nav-item">
-        <a href="#" title="Order">
-          Order
+        <a href="#" title="Offers">
+          Offers
         </a>
       </li>
       <li className="nav-item">
@@ -19,8 +19,13 @@ const NavigationBar = () => {
         </a>
       </li>
       <li className="nav-item">
+        <a href="#" title="Login/Register">
+          <i className="ri-user-fill"></i>
+        </a>
+      </li>
+      <li className="nav-item">
         <a href="#" title="cart">
-          <i className="ri-shopping-cart-line"></i>
+          <i className="ri-shopping-bag-line"></i>
         </a>
       </li>
     </ul>
