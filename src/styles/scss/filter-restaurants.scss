@@ -12,10 +12,15 @@
 
     .search-button{
         padding: 10px 20px;
-        background-color: blue;
+        background-color: #1338BE;
         color: #fff;
         font-weight: 700;
         border: 0px;
         cursor: pointer;
+        transition: all 0.3s ease-in-out;
+
+        &:hover{
+            background-color: #00256E;
+        }
     }
 }
