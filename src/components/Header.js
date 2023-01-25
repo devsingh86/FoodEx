@@ -19,11 +19,6 @@ const NavigationBar = () => {
         </a>
       </li>
       <li className="nav-item">
-        <a href="#" title="Search">
-          <i className="ri-search-2-line"></i>
-        </a>
-      </li>
-      <li className="nav-item">
         <a href="#" title="cart">
           <i className="ri-shopping-cart-line"></i>
         </a>
