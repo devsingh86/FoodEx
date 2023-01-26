@@ -37,42 +37,65 @@ const RestaurantList = () => {
     <Shimmer />
   ) : (
     <>
-      <div className="two-col-flex">
-        {filteredRestaurants?.length !== 0 && (
+      {filteredRestaurants?.length !== 0 && (
+        <div className="two-col-flex">
           <h2>{filteredRestaurants.length} favorites near you</h2>
-        )}
-        <div className="search-container">
-          <input
-            type="text"
-            className="search-input"
-            placeholder="Search restaurants near you..."
-            value={searchText}
-            onChange={(e) => {
-              setSearchText(e.target.value);
-            }}
-          />
-          <input
-            type="button"
-            value="SEARCH"
-            className="search-button"
-            onClick={() => {
-              const output = filterRestaurant(searchText, allRestaurants);
-              //update restaurants local state variable;
-              setFilteredRestaurants(output);
-            }}
-          />
+          <div className="search-container">
+            <input
+              type="text"
+              className="search-input"
+              placeholder="Search restaurants near you..."
+              value={searchText}
+              onChange={(e) => {
+                setSearchText(e.target.value);
+              }}
+            />
+            <input
+              type="button"
+              value="SEARCH"
+              className="search-button"
+              onClick={() => {
+                const output = filterRestaurant(searchText, allRestaurants);
+                //update restaurants local state variable;
+                setFilteredRestaurants(output);
+              }}
+            />
+          </div>
         </div>
-      </div>
+      )}
       <div className="restaurantWrapper">
         {filteredRestaurants?.length === 0 && (
           <>
             <div className="no-results">
-              <h3>Nothing Found</h3>
+              <h3>
+                No Restaurants Found <i className="ri-emotion-sad-line"></i>
+              </h3>
               <p>
-                Sorry, but nothing matched your search of{" "}
+                Sorry, but nothing matched your{" "}
                 <strong>restaurant search keywords</strong>.<br />
-                Please try again with some different keywords.
+                Please try again with some different restaurant name.
               </p>
+              <div className="search-container">
+                <input
+                  type="text"
+                  className="search-input"
+                  placeholder="Search restaurants near you..."
+                  value={searchText}
+                  onChange={(e) => {
+                    setSearchText(e.target.value);
+                  }}
+                />
+                <input
+                  type="button"
+                  value="SEARCH"
+                  className="search-button"
+                  onClick={() => {
+                    const output = filterRestaurant(searchText, allRestaurants);
+                    //update restaurants local state variable;
+                    setFilteredRestaurants(output);
+                  }}
+                />
+              </div>
             </div>
           </>
         )}

@@ -2,12 +2,24 @@
     max-width: 600px;
     background-color: #f1f1f1;
     margin: 50px auto;
+    margin-top: 10px;
     padding: 30px 50px;
     font-size: 1.1rem;
     line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    text-align: center;
 
     h3{
         font-family: "Montserrat";
         font-size: 1.4rem;
+        display: inline-flex;
+        gap: 10px;
+    }
+
+    .search-container{
+        margin-left: 0;
     }
 }
