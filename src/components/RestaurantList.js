@@ -17,6 +17,8 @@ const RestaurantList = () => {
   //search query text
   const [searchText, setSearchText] = useState("");
 
+  console.log("search: " + searchText);
+
   useEffect(() => {
     //API call from useEffect, to avoid re-calling the  API
     getRestaurants();
@@ -48,18 +50,22 @@ const RestaurantList = () => {
               value={searchText}
               onChange={(e) => {
                 setSearchText(e.target.value);
-              }}
-            />
-            <button
-              className="search-button"
-              onClick={() => {
                 const output = filterRestaurant(searchText, allRestaurants);
-                //update restaurants local state variable;
                 setFilteredRestaurants(output);
               }}
-            >
+            />
+            {searchText === "" ? (
               <i className="ri-search-2-line"></i>
-            </button>
+            ) : (
+              <i
+                className="ri-close-line"
+                onClick={() => {
+                  setSearchText("");
+                  const output = filterRestaurant(" ", allRestaurants);
+                  setFilteredRestaurants(output);
+                }}
+              ></i>
+            )}
           </div>
         </div>
       )}
@@ -83,18 +89,22 @@ const RestaurantList = () => {
                   value={searchText}
                   onChange={(e) => {
                     setSearchText(e.target.value);
-                  }}
-                />
-                <button
-                  className="search-button"
-                  onClick={() => {
                     const output = filterRestaurant(searchText, allRestaurants);
-                    //update restaurants local state variable;
                     setFilteredRestaurants(output);
                   }}
-                >
+                />
+                {searchText === "" ? (
                   <i className="ri-search-2-line"></i>
-                </button>
+                ) : (
+                  <i
+                    className="ri-close-line"
+                    onClick={() => {
+                      setSearchText("");
+                      const output = filterRestaurant(" ", allRestaurants);
+                      setFilteredRestaurants(output);
+                    }}
+                  ></i>
+                )}
               </div>
             </div>
           </>
