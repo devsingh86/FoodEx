@@ -5,7 +5,7 @@ import Shimmer from "./Shimmer";
 //filter restuarants logic
 function filterRestaurant(searchText, restaurants) {
   return restaurants.filter((restaurant) =>
-    restaurant.data.name.includes(searchText)
+    restaurant?.data?.name.toLowerCase()?.includes(searchText.toLowerCase())
   );
 }
 
@@ -50,16 +50,16 @@ const RestaurantList = () => {
                 setSearchText(e.target.value);
               }}
             />
-            <input
-              type="button"
-              value="SEARCH"
+            <button
               className="search-button"
               onClick={() => {
                 const output = filterRestaurant(searchText, allRestaurants);
                 //update restaurants local state variable;
                 setFilteredRestaurants(output);
               }}
-            />
+            >
+              <i className="ri-search-2-line"></i>
+            </button>
           </div>
         </div>
       )}
@@ -85,16 +85,16 @@ const RestaurantList = () => {
                     setSearchText(e.target.value);
                   }}
                 />
-                <input
-                  type="button"
-                  value="SEARCH"
+                <button
                   className="search-button"
                   onClick={() => {
                     const output = filterRestaurant(searchText, allRestaurants);
                     //update restaurants local state variable;
                     setFilteredRestaurants(output);
                   }}
-                />
+                >
+                  <i className="ri-search-2-line"></i>
+                </button>
               </div>
             </div>
           </>

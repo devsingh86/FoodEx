@@ -3,12 +3,14 @@
     gap: 20px;
     list-style: none;
 
+    &.flyout{
+        display: none;
+    }
+
     li a {
         text-decoration: none;
         color: #fff;
-        font-size: 1.1rem;
-        font-weight: 500;
-        font-family: Montserrat;
+        font-size: 0.9rem;
         
 
         &:hover {
