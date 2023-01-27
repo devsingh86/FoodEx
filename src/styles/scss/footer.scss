@@ -9,6 +9,24 @@ footer {
         color: azure;
         text-align: center;
         font-size: 0.8rem;
+
+        .social-icons{
+            margin-left: auto;
+            font-size: 1.5rem;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+
+            a{
+                color: #fff;
+                text-decoration: none;
+                
+                &:hover{
+                    text-decoration: none;
+                    color: #dc143c;
+                }
+            }
+        }
     }
 }
 

@@ -24,6 +24,7 @@ const RestaurantList = () => {
     getRestaurants();
   }, []);
 
+  //async call to fetch data
   async function getRestaurants() {
     const data = await fetch(
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.1074186&lng=73.01726169999999&page_type=DESKTOP_WEB_LISTING"
@@ -33,6 +34,8 @@ const RestaurantList = () => {
     setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
     setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
   }
+
+  //Early return to handle component not  rendering
   if (!allRestaurants) return null;
 
   return allRestaurants.length === 0 ? (

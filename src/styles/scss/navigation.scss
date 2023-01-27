@@ -2,6 +2,7 @@
     display: flex;
     gap: 20px;
     list-style: none;
+    align-items: center;
 
     &.flyout{
         display: none;
@@ -15,18 +16,16 @@
 
         &:hover {
             text-decoration: none;
-            color: #ffe5b4;
+            color: yellow;
 
             i{
-                border-color: #ffe5b4;
-                background-color: #ffe5b4;
-                color: #dc143c;
+                color: yellow;
             }
         }
 
         i{
-            padding: 10px;
-            border: 1px solid;
+            padding: 5px;
+            font-size: 1.4rem;
             transition: all 0.3s ease-in-out;
         }
     }

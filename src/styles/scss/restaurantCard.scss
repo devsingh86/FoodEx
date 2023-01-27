@@ -4,12 +4,6 @@
     flex-wrap: wrap;
     margin-top: 40px;
 
-    .shimmer-card{
-        &:first-child{
-            margin-top: 30px;
-        }
-    }
-
     .card{
         border: 1px solid #ccc;
         font-size: 1rem;
@@ -44,7 +38,7 @@
                 width: 100%;
                 height: 100%;
             }
-      }
+        }
       
 
         .restaurantDetails{

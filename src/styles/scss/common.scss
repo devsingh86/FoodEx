@@ -32,4 +32,8 @@ h2{
 
 .two-col-flex{
     display: flex;
+
+    &.va-center{
+        align-items: center;
+    }
 }
