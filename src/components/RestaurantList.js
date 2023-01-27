@@ -5,7 +5,10 @@ import Shimmer from "./Shimmer";
 //filter restuarants logic
 function filterRestaurant(searchText, restaurants) {
   return restaurants.filter((restaurant) =>
-    restaurant?.data?.name.toLowerCase()?.includes(searchText.toLowerCase())
+    restaurant?.data?.name
+      ?.toLowerCase()
+      .trim()
+      ?.includes(searchText.toLowerCase().trim())
   );
 }
 
@@ -16,8 +19,6 @@ const RestaurantList = () => {
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   //search query text
   const [searchText, setSearchText] = useState("");
-
-  console.log("search: " + searchText);
 
   useEffect(() => {
     //API call from useEffect, to avoid re-calling the  API
@@ -64,7 +65,7 @@ const RestaurantList = () => {
                 className="ri-close-line"
                 onClick={() => {
                   setSearchText("");
-                  const output = filterRestaurant(" ", allRestaurants);
+                  const output = filterRestaurant("", allRestaurants);
                   setFilteredRestaurants(output);
                 }}
               ></i>
@@ -103,7 +104,7 @@ const RestaurantList = () => {
                     className="ri-close-line"
                     onClick={() => {
                       setSearchText("");
-                      const output = filterRestaurant(" ", allRestaurants);
+                      const output = filterRestaurant("", allRestaurants);
                       setFilteredRestaurants(output);
                     }}
                   ></i>
