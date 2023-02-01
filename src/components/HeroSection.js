@@ -10,6 +10,7 @@ const HeroSection = () => {
     <section className="full-width herosection">
       <div className="centerAlign">
         <Title />
+        <div className="mouse"></div>
       </div>
     </section>
   );

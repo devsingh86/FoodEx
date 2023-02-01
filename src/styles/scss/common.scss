@@ -32,8 +32,23 @@ h2{
 
 .two-col-flex{
     display: flex;
+    gap: 50px;
 
     &.va-center{
         align-items: center;
     }
+}
+
+.text-center{
+    text-align: center;
+}
+
+.link_404{			 
+	color: #fff!important;
+    padding: 10px 20px;
+    background: #dc143c;
+    margin: 20px 0;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 0.8rem;
 }

@@ -5,7 +5,7 @@ const Footer = () => {
     <footer className="footer">
       <section className="footerWrapper">
         <div className="two-col-flex va-center">
-          <p>Copyright © {year} FoodEx, Inc. All rights reserved</p>
+          <p>© {year} FoodEx, Inc. All rights reserved.</p>
           <div className="social-icons">
             <a href="#" title="Instagram">
               <i className="ri-instagram-line"></i>

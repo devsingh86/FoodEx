@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
+import { API_URL } from "../constants.js";
 
 //filter restuarants logic
 function filterRestaurant(searchText, restaurants) {
@@ -28,7 +29,7 @@ const RestaurantList = () => {
   //async call to fetch data
   async function getRestaurants() {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.1074186&lng=73.01726169999999&page_type=DESKTOP_WEB_LISTING"
+      `${API_URL}/restaurants/list/v5?lat=26.8466937&lng=80.94616599999999&page_type=DESKTOP_WEB_LISTING`
     );
     const json = await data.json();
 
@@ -58,18 +59,16 @@ const RestaurantList = () => {
                 setFilteredRestaurants(output);
               }}
             />
-            {searchText === "" ? (
-              <i className="ri-search-2-line"></i>
-            ) : (
-              <i
-                className="ri-close-line"
-                onClick={() => {
-                  setSearchText("");
-                  const output = filterRestaurant("", allRestaurants);
-                  setFilteredRestaurants(output);
-                }}
-              ></i>
-            )}
+            <i
+              className={
+                searchText === "" ? "ri-search-2-line" : "ri-close-line"
+              }
+              onClick={() => {
+                setSearchText("");
+                const output = filterRestaurant("", allRestaurants);
+                setFilteredRestaurants(output);
+              }}
+            ></i>
           </div>
         </div>
       )}
@@ -97,18 +96,16 @@ const RestaurantList = () => {
                     setFilteredRestaurants(output);
                   }}
                 />
-                {searchText === "" ? (
-                  <i className="ri-search-2-line"></i>
-                ) : (
-                  <i
-                    className="ri-close-line"
-                    onClick={() => {
-                      setSearchText("");
-                      const output = filterRestaurant("", allRestaurants);
-                      setFilteredRestaurants(output);
-                    }}
-                  ></i>
-                )}
+                <i
+                  className={
+                    searchText === "" ? "ri-search-2-line" : "ri-close-line"
+                  }
+                  onClick={() => {
+                    setSearchText("");
+                    const output = filterRestaurant("", allRestaurants);
+                    setFilteredRestaurants(output);
+                  }}
+                ></i>
               </div>
             </div>
           </>

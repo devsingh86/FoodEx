@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import logo from "../assets/logo/foodex-white.png";
 
 function isLoggedIn(isLogged) {
@@ -10,21 +11,21 @@ const NavigationBar = () => {
 
   return (
     <>
-      <ul className="navbar flyout">
+      <ul className="navbar flyout1">
         <li className="nav-item">
-          <a href="#" title="Offers">
+          <Link to="/offers" title="Offers">
             Offers
-          </a>
+          </Link>
         </li>
         <li className="nav-item">
-          <a href="#" title="About Us">
+          <Link to="/about" title="About Us">
             About Us
-          </a>
+          </Link>
         </li>
         <li className="nav-item">
-          <a href="#" title="Contact Us">
+          <Link to="/contact" title="Contact Us">
             Contact Us
-          </a>
+          </Link>
         </li>
       </ul>
       <ul className="navbar">
@@ -73,9 +74,9 @@ const NavigationBar = () => {
 export const Logo = () => {
   return (
     <div className="logo-container">
-      <a href="/" title="Logo">
+      <Link to="/" title="FoodEx">
         <img src={logo} title="FoodEx" alt="FoodEx" />
-      </a>
+      </Link>
     </div>
   );
 };
