@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { IMG_CDN_URL, API_URL } from "../constants.js";
 import Shimmer from "./Shimmer";
 
@@ -18,7 +18,12 @@ const RestaurantMenu = () => {
     );
     const fullRestaurantData = await getRestaurantData.json();
     console.log(fullRestaurantData);
-    setRestaurant(fullRestaurantData.data);
+
+    if (fullRestaurantData.statusCode != "404") {
+      setRestaurant(fullRestaurantData.data);
+    } else {
+      setRestaurant(fullRestaurantData);
+    }
   }
 
   return !restaurant ? (
@@ -30,24 +35,38 @@ const RestaurantMenu = () => {
   ) : (
     <main className="mainContainer">
       <section className="centerAlign">
-        <div className="two-col-flex">
-          <div>
-            <h1>RestaurantMenu for {restroId}</h1>
-            <h2>{restaurant.name}</h2>
-            <img src={IMG_CDN_URL + restaurant.cloudinaryImageId} />
-            <h3>{restaurant.cuisines.join(", ")}</h3>
-            <h3>{restaurant.avgRating} stars</h3>
-            <h3>{restaurant.costForTwoMsg}</h3>
+        {restaurant.statusCode != "404" ? (
+          <div className="two-col-flex">
+            <div>
+              <h1>RestaurantMenu for {restroId}</h1>
+              <h2>{restaurant?.name}</h2>
+              <img src={IMG_CDN_URL + restaurant?.cloudinaryImageId} />
+              <h3>{restaurant?.cuisines?.join(", ")}</h3>
+              <h3>{restaurant?.avgRating} stars</h3>
+              <h3>{restaurant?.costForTwoMsg}</h3>
+              <ul>
+                {restaurant?.menu?.widgets.map((item, index) => (
+                  <li key={index}>{item.name}</li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h2>Menu</h2>
+              <ul>
+                {Object.values(restaurant?.menu?.items).map((item) => (
+                  <li key={item.id}>{item.category}</li>
+                ))}
+              </ul>
+            </div>
           </div>
-          <div>
-            <h2>Menu</h2>
-            <ul>
-              {Object.values(restaurant?.menu?.items).map((item) => (
-                <li id={item.id}>{item.name}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
+        ) : (
+          <>
+            <h2>{restaurant.statusMessage}</h2>
+            <Link to="/" className="link_404">
+              Go To Home
+            </Link>
+          </>
+        )}
       </section>
     </main>
   );

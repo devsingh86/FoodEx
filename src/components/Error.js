@@ -9,7 +9,7 @@ const Error = () => {
       <Header />
       <main className="mainContainer">
         <section className="centerAlign text-center">
-          <h1>{err.status + " -  Page " + err.statusText}</h1>
+          <h1>{err?.status + " -  Page " + err?.statusText}</h1>
           <div>
             <img src="https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif" />
           </div>

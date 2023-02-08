@@ -1,3 +1,7 @@
+import { Outlet } from "react-router-dom";
+import ProfileFC from "../components/Profile";
+import ProfileCC from "../components/ProfileClass";
+
 const About = () => {
   return (
     <main className="mainContainer">
@@ -23,6 +27,8 @@ const About = () => {
             neque gravida in. Vel eros donec ac odio tempor.
           </p>
         </div>
+        <ProfileFC name={"Dev Function"} />
+        <ProfileCC name={"Dev Class"} />
       </section>
     </main>
   );

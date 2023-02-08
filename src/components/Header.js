@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/logo/foodex-white.png";
 
 function isLoggedIn(isLogged) {
@@ -13,19 +13,31 @@ const NavigationBar = () => {
     <>
       <ul className="navbar flyout1">
         <li className="nav-item">
-          <Link to="/offers" title="Offers">
+          <NavLink
+            to="/offers"
+            title="Offers"
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
             Offers
-          </Link>
+          </NavLink>
         </li>
         <li className="nav-item">
-          <Link to="/about" title="About Us">
+          <NavLink
+            to="/about"
+            title="About Us"
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
             About Us
-          </Link>
+          </NavLink>
         </li>
         <li className="nav-item">
-          <Link to="/contact" title="Contact Us">
+          <NavLink
+            to="/contact"
+            title="Contact Us"
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
             Contact Us
-          </Link>
+          </NavLink>
         </li>
       </ul>
       <ul className="navbar">
