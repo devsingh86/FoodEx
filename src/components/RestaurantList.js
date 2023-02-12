@@ -1,17 +1,8 @@
 import { useEffect, useState } from "react";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
-import { API_URL } from "../constants.js";
-
-//filter restuarants logic
-function filterRestaurant(searchText, restaurants) {
-  return restaurants.filter((restaurant) =>
-    restaurant?.data?.name
-      ?.toLowerCase()
-      .trim()
-      ?.includes(searchText.toLowerCase().trim())
-  );
-}
+import { filterRestaurant } from "../utils/helper";
+import useOnline from "../utils/useConnectionStatus";
 
 const RestaurantList = () => {
   //all data
@@ -29,12 +20,25 @@ const RestaurantList = () => {
   //async call to fetch data
   async function getRestaurants() {
     const data = await fetch(
-      `${API_URL}/restaurants/list/v5?lat=26.8466937&lng=80.94616599999999&page_type=DESKTOP_WEB_LISTING`
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.8466937&lng=80.94616599999999&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
 
     setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
     setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+  }
+
+  const isOnline = useOnline();
+
+  if (!isOnline) {
+    return (
+      <div className="no-results">
+        <h3>
+          Looks like you are offline <i className="ri-wifi-off-line"></i>
+        </h3>
+        <p>Please check your internet connection.</p>
+      </div>
+    );
   }
 
   //Early return to handle component not  rendering

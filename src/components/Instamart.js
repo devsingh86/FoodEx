@@ -1,17 +1,12 @@
-import { useEffect } from "react";
-import { Outlet } from "react-router-dom";
-import ProfileFC from "../components/Profile";
-import ProfileCC from "../components/ProfileClass";
 import useTitle from "../utils/useTitle";
 
-const About = () => {
-  useTitle("About Us");
-
+const Instamart = () => {
+  useTitle("Instamart");
   return (
     <main className="mainContainer">
       <section className="centerAlign">
         <div>
-          <h1>About Us</h1>
+          <h1>Instamart</h1>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Eget
@@ -31,11 +26,9 @@ const About = () => {
             neque gravida in. Vel eros donec ac odio tempor.
           </p>
         </div>
-        <ProfileFC name={"Dev Function"} />
-        <ProfileCC name={"Dev Class"} />
       </section>
     </main>
   );
 };
 
-export default About;
+export default Instamart;

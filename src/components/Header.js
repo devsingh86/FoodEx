@@ -39,6 +39,15 @@ const NavigationBar = () => {
             Contact Us
           </NavLink>
         </li>
+        <li className="nav-item">
+          <NavLink
+            to="/instamart"
+            title="Instamart"
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
+            Instamart
+          </NavLink>
+        </li>
       </ul>
       <ul className="navbar">
         {isLogged ? (

@@ -7,6 +7,15 @@ class Profile extends React.Component {
       count: 0,
     };
   }
+  componentDidMount() {
+    console.log("component did mount");
+  }
+  componentDidUpdate() {
+    console.log("component did update");
+  }
+  componentWillUnmount() {
+    console.log("component will unmount");
+  }
   render() {
     let { count } = this.state;
     return (

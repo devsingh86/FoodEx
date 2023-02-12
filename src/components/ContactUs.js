@@ -1,4 +1,8 @@
+import { useEffect } from "react";
+import useTitle from "../utils/useTitle";
+
 const ContactUS = () => {
+  useTitle("Contact Us");
   return (
     <main className="mainContainer">
       <section className="centerAlign">
