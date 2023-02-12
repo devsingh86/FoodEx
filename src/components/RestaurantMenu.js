@@ -7,11 +7,10 @@ import Menucard from "./Menucard";
 
 const RestaurantMenu = () => {
   const { restroId } = useParams();
+  const restaurant = useRestautant(restroId);
 
   const [category, setCategory] = useState("Recommended");
   const [filterMenu, setFilterMenu] = useState([]);
-
-  const restaurant = useRestautant(restroId);
 
   const paiseToRupee = restaurant?.costForTwo / 100;
 
@@ -107,6 +106,12 @@ const RestaurantMenu = () => {
                 </select>*/}
 
               <div className="menuWrapper">
+                {category != "Recommended" && (
+                  <h3>
+                    {category} - {filterMenu.length} Items
+                  </h3>
+                )}
+
                 {filterMenu.length === 0
                   ? Object.values(restaurant?.menu?.items).map((item) => (
                       <Menucard {...item} key={item.id} />
