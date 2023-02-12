@@ -108,7 +108,7 @@ const RestaurantMenu = () => {
               <div className="menuWrapper">
                 {category != "Recommended" && (
                   <h3>
-                    {category} - {filterMenu.length} Items
+                    {category} - {filterMenu.length} Item(s)
                   </h3>
                 )}
 
