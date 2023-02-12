@@ -61,8 +61,8 @@
         
 
         &.active{
-            color: #fa9319;
-            border-right: 4px solid #fa9319;
+            color: #151564;
+            border-right: 4px solid #151564;
         }
     }
 }
@@ -98,8 +98,8 @@
                 width: 160px;
                 height: 35px;
                 border: 0;
-                background-color: #fa9319;
-                border: 1px solid #fa9319;
+                background-color: #151564;
+                border: 1px solid #151564;
                 outline: none;
                 cursor: pointer;
                 color: #fff;
@@ -108,7 +108,7 @@
                 margin-top: 20px;
                 &:hover {
                     background-color: #fff;
-                    color: #fa9319;
+                    color: #02010e;
                 }
                 &:active {
                     transform: scale(.9);
