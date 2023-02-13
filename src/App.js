@@ -10,12 +10,14 @@ import ContactUS from "./components/ContactUs";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Shimmer from "./components/Shimmer";
+import ScrollToTop from "./utils/scrollToTop";
 
 const Instamart = lazy(() => import("./components/Instamart"));
 
 const Applayout = () => {
   return (
     <>
+      <ScrollToTop />
       <Header />
       <Outlet />
       <Footer />

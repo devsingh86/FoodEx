@@ -34,11 +34,14 @@ const RestaurantMenu = () => {
               {restaurant?.locality}, {restaurant?.area}
             </h3>
             <div className="stats">
-              <div>
-                <i className="ri-star-s-line"></i>
-                {restaurant?.avgRating}
-                <span>{restaurant?.totalRatingsString}</span>
-              </div>
+              {restaurant?.avgRating > 0 && (
+                <div>
+                  {restaurant?.avgRating}
+                  <i className="ri-star-s-line"></i>
+                  <span>{restaurant?.totalRatingsString}</span>
+                </div>
+              )}
+
               <div>
                 {paiseToRupee.toLocaleString("en-IN", {
                   style: "currency",
@@ -106,10 +109,12 @@ const RestaurantMenu = () => {
                 </select>*/}
 
               <div className="menuWrapper">
-                {category != "Recommended" && (
+                {category != "Recommended" ? (
                   <h3>
-                    {category} - {filterMenu.length} Item(s)
+                    {category} - {filterMenu.length} option(s)
                   </h3>
+                ) : (
+                  <h3>{category}</h3>
                 )}
 
                 {filterMenu.length === 0

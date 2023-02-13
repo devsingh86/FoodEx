@@ -1,15 +1,21 @@
 import { IMG_CDN_URL } from "../constants";
 
-const Menucard = ({ price, cloudinaryImageId, name }) => {
+const Menucard = ({ price, cloudinaryImageId, name, isVeg }) => {
+  const paiseToRupee = price / 100;
   return (
     <div className="card">
       <div className="menuImage">
         <img src={IMG_CDN_URL + cloudinaryImageId} title="" alt="" />
       </div>
       <div className="menu-details">
-        <h2>{name}</h2>
+        <h2>
+          {name}
+          <i
+            className={`ri-stop-circle-line ${isVeg == 0 ? "red" : "green"}`}
+          ></i>
+        </h2>
         <h3>
-          {price.toLocaleString("en-IN", {
+          {paiseToRupee.toLocaleString("en-IN", {
             style: "currency",
             currency: "INR",
           })}
