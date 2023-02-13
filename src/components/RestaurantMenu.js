@@ -22,44 +22,44 @@ const RestaurantMenu = () => {
     </main>
   ) : (
     <main className="mainContainer">
-      <section className="menu-header">
-        <div className="centerAlign two-col-flex va-center">
-          <div className="restaurantImage">
-            <img src={IMG_CDN_URL + restaurant?.cloudinaryImageId} />
-          </div>
-          <div className="restaurant-details">
-            <h2>{restaurant?.name}</h2>
-            <h3>{restaurant?.cuisines?.join(", ")}</h3>
-            <h3>
-              {restaurant?.locality}, {restaurant?.area}
-            </h3>
-            <div className="stats">
-              {restaurant?.avgRating > 0 && (
-                <div>
-                  {restaurant?.avgRating}
-                  <i className="ri-star-s-line"></i>
-                  <span>{restaurant?.totalRatingsString}</span>
-                </div>
-              )}
-
-              <div>
-                {paiseToRupee.toLocaleString("en-IN", {
-                  style: "currency",
-                  currency: "INR",
-                })}
-                <span>Cost for two</span>
+      {restaurant.statusCode != "404" ? (
+        <>
+          <section className="menu-header">
+            <div className="centerAlign two-col-flex va-center">
+              <div className="restaurantImage">
+                <img src={IMG_CDN_URL + restaurant?.cloudinaryImageId} />
               </div>
-              <div>
-                {restaurant?.sla?.slaString}
-                <span>Delivery Time</span>
+              <div className="restaurant-details">
+                <h2>{restaurant?.name}</h2>
+                <h3>{restaurant?.cuisines?.join(", ")}</h3>
+                <h3>
+                  {restaurant?.locality}, {restaurant?.area}
+                </h3>
+                <div className="stats">
+                  {restaurant?.avgRating > 0 && (
+                    <div>
+                      {restaurant?.avgRating}
+                      <i className="ri-star-s-line"></i>
+                      <span>{restaurant?.totalRatingsString}</span>
+                    </div>
+                  )}
+
+                  <div>
+                    {paiseToRupee.toLocaleString("en-IN", {
+                      style: "currency",
+                      currency: "INR",
+                    })}
+                    <span>Cost for two</span>
+                  </div>
+                  <div>
+                    {restaurant?.sla?.slaString}
+                    <span>Delivery Time</span>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-      <section className="centerAlign">
-        {restaurant.statusCode != "404" ? (
-          <>
+          </section>
+          <section className="centerAlign">
             <div className="two-col-flex">
               <ul className="menuCategory">
                 {restaurant?.menu?.widgets.map((item, index) => (
@@ -86,27 +86,27 @@ const RestaurantMenu = () => {
                 ))}
               </ul>
               {/*<select
-                value={category}
-                onChange={(e) => {
-                  setCategory(e.target.value);
+            value={category}
+            onChange={(e) => {
+              setCategory(e.target.value);
 
-                  const filterMenu = Object.values(
-                    restaurant?.menu?.items
-                  ).reduce((filtered, item) => {
-                    if (item.category === e.target.value) {
-                      filtered.push(item);
-                    }
-                    return filtered;
-                  }, []);
-                  setFilterMenu(filterMenu);
-                }}
-              >
-                {restaurant?.menu?.widgets.map((item, index) => (
-                  <option key={index} value={item.name}>
-                    {item.name}
-                  </option>
-                ))}
-                </select>*/}
+              const filterMenu = Object.values(
+                restaurant?.menu?.items
+              ).reduce((filtered, item) => {
+                if (item.category === e.target.value) {
+                  filtered.push(item);
+                }
+                return filtered;
+              }, []);
+              setFilterMenu(filterMenu);
+            }}
+          >
+            {restaurant?.menu?.widgets.map((item, index) => (
+              <option key={index} value={item.name}>
+                {item.name}
+              </option>
+            ))}
+            </select>*/}
 
               <div className="menuWrapper">
                 {category != "Recommended" ? (
@@ -126,16 +126,16 @@ const RestaurantMenu = () => {
                     ))}
               </div>
             </div>
-          </>
-        ) : (
-          <>
-            <h2>{restaurant.statusMessage}</h2>
-            <Link to="/" className="link_404">
-              Go To Home
-            </Link>
-          </>
-        )}
-      </section>
+          </section>
+        </>
+      ) : (
+        <section className="centerAlign">
+          <h2>{restaurant.statusMessage}</h2>
+          <Link to="/" className="link_404">
+            Go To Home
+          </Link>
+        </section>
+      )}
     </main>
   );
 };

@@ -10,9 +10,8 @@
         font-size: 1rem;
         cursor: pointer;
         position: relative;
-        max-width: 300px;
         transition: all 0.2s ease-in-out;
-        width: 22.9%;
+        width: 31.3%;
         color: #333;
 
         &:hover{
@@ -40,7 +39,7 @@
         }
 
         .restaurantImage{
-            height: 165px;
+            height: 210px;
             object-fit: fill;
             img{
                 width: 100%;
@@ -77,7 +76,7 @@
 
             .moreDetails{
                 display: flex;
-                justify-content: space-between;
+                gap: 10px;
                 align-items: center;
                 padding-top: 20px;
                 margin-top: auto;

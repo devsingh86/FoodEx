@@ -7,6 +7,7 @@ import useOnline from "../utils/useConnectionStatus";
 const RestaurantList = () => {
   //all data
   const [allRestaurants, setAllRestaurants] = useState([]);
+  console.log(allRestaurants);
   //filtered data
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   //search query text
