@@ -10,9 +10,7 @@ const Menucard = ({ price, cloudinaryImageId, name, isVeg }) => {
       <div className="menu-details">
         <h2>
           {name}
-          <i
-            className={`ri-stop-circle-line ${isVeg == 0 ? "red" : "green"}`}
-          ></i>
+          {isVeg == 1 ? <i className="ri-stop-circle-line green"></i> : ""}
         </h2>
         <h3>
           {paiseToRupee.toLocaleString("en-IN", {

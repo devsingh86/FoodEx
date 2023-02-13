@@ -11,7 +11,7 @@ const useRestautant = (restroId) => {
 
   async function getRestaurantData() {
     const getRestaurantData = await fetch(
-      `${API_URL}/menu/v4/full?lat=26.8466937&lng=80.94616599999999&menuId=${restroId}`
+      `${API_URL}/menu/v4/full?lat=27.1766701&lng=78.00807449999999&menuId=${restroId}`
     );
     const fullRestaurantData = await getRestaurantData.json();
     console.log(fullRestaurantData);
