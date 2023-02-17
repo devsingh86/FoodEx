@@ -3,6 +3,7 @@ import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { filterRestaurant } from "../utils/helper";
 import useOnline from "../utils/useConnectionStatus";
+import { SWIGGY_RESTRO_API } from "../constants";
 
 const RestaurantList = () => {
   //all data
@@ -20,13 +21,11 @@ const RestaurantList = () => {
 
   //async call to fetch data
   async function getRestaurants() {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=27.1766701&lng=78.00807449999999&page_type=DESKTOP_WEB_LISTING"
-    );
+    const data = await fetch(SWIGGY_RESTRO_API);
     const json = await data.json();
 
-    setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
-    setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+    setAllRestaurants(json?.data?.cards[1]?.data?.data?.cards);
+    setFilteredRestaurants(json?.data?.cards[1]?.data?.data?.cards);
   }
 
   const isOnline = useOnline();

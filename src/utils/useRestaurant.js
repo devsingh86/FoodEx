@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { API_URL } from "../constants";
+import { SWIGGY_RESTRO_MENU_API } from "../constants";
 
 const useRestautant = (restroId) => {
   const [restaurant, setRestaurant] = useState(null);
@@ -10,9 +10,7 @@ const useRestautant = (restroId) => {
   }, []);
 
   async function getRestaurantData() {
-    const getRestaurantData = await fetch(
-      `${API_URL}/menu/v4/full?lat=27.1766701&lng=78.00807449999999&menuId=${restroId}`
-    );
+    const getRestaurantData = await fetch(SWIGGY_RESTRO_MENU_API + restroId);
     const fullRestaurantData = await getRestaurantData.json();
     console.log(fullRestaurantData);
     if (fullRestaurantData.statusCode != "404") {
