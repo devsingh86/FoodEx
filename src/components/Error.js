@@ -10,7 +10,7 @@ const Error = () => {
       <main className="mainContainer">
         <section className="centerAlign text-center">
           <h1>{err?.status + " -  Page " + err?.statusText}</h1>
-          <div>
+          <div className="errorImage">
             <img src="https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif" />
           </div>
           <h2>Look like you're lost</h2>

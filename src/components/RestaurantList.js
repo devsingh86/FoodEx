@@ -24,8 +24,8 @@ const RestaurantList = () => {
     const data = await fetch(SWIGGY_RESTRO_API);
     const json = await data.json();
 
-    setAllRestaurants(json?.data?.cards[1]?.data?.data?.cards);
-    setFilteredRestaurants(json?.data?.cards[1]?.data?.data?.cards);
+    setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+    setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
   }
 
   const isOnline = useOnline();
