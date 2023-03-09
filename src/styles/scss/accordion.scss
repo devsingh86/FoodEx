@@ -1,0 +1,40 @@
+.accordion-wrapper{
+    border: 1px solid  #ccc;
+    transition: margin-bottom 0.2s ease-in-out;
+    margin-top: -1px;
+    border-radius: 1px;
+    .accordion-header{
+        cursor: pointer;
+        font-size: 1.2rem;
+        font-weight: bold;
+        padding: 10px 20px;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+
+        i{
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-left: auto;
+        }
+    }
+    .accordion-body{
+        border-top: 1px solid #ccc;
+        height: 0px;
+        opacity: 0;
+        transition: all 0.5s ease-in;
+
+        .accordion-content{
+            padding: 20px;
+        }
+    }
+
+    &.open{
+        box-shadow: 0 4px 7px 0 rgb(218 220 230 / 60%);
+        margin-bottom: 20px;
+        .accordion-body{
+            height: auto;
+            opacity: 1;
+        }
+    }
+}

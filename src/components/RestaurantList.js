@@ -5,7 +5,7 @@ import { filterRestaurant } from "../utils/helper";
 import useOnline from "../utils/useConnectionStatus";
 import { SWIGGY_RESTRO_API } from "../constants";
 
-const RestaurantList = () => {
+const RestaurantList = ({ brandName }) => {
   //all data
   const [allRestaurants, setAllRestaurants] = useState([]);
   console.log(allRestaurants);
@@ -116,7 +116,11 @@ const RestaurantList = () => {
         )}
         {filteredRestaurants.map((restaurant) => {
           return (
-            <RestaurantCard {...restaurant.data} key={restaurant.data.id} />
+            <RestaurantCard
+              {...restaurant.data}
+              key={restaurant.data.id}
+              brandName={brandName}
+            />
           );
         })}
       </div>

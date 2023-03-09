@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-import { Outlet } from "react-router-dom";
 import ProfileFC from "../components/Profile";
 import ProfileCC from "../components/ProfileClass";
 import useTitle from "../utils/useTitle";

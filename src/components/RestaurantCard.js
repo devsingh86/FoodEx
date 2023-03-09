@@ -10,6 +10,7 @@ const RestaurantCard = ({
   avgRating,
   totalRatingsString,
   promoted,
+  brandName,
 }) => {
   return (
     <div className="card">
@@ -17,7 +18,9 @@ const RestaurantCard = ({
         <div className="restaurantImage">
           <img src={IMG_CDN_URL + cloudinaryImageId} title="" alt="" />
         </div>
-        {promoted && <div className="promoted">PROMOTED</div>}
+        {promoted && (
+          <div className="promoted">PROMOTED by {brandName.name}</div>
+        )}
         <div className="restaurantDetails">
           <h2>{name}</h2>
           <h3>{cuisines.join(", ")}</h3>

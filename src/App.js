@@ -5,14 +5,14 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Body from "./components/Body";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-import About from "./components/About";
-import ContactUS from "./components/ContactUs";
-import Error from "./components/Error";
-import RestaurantMenu from "./components/RestaurantMenu";
 import Shimmer from "./components/Shimmer";
 import ScrollToTop from "./utils/scrollToTop";
 
-const Instamart = lazy(() => import("./components/Instamart"));
+const Error = lazy(() => import("./components/Error"));
+const About = lazy(() => import("./components/About"));
+const ContactUS = lazy(() => import("./components/ContactUS"));
+const RestaurantMenu = lazy(() => import("./components/RestaurantMenu"));
+const FAQ = lazy(() => import("./components/FAQ"));
 
 const Applayout = () => {
   return (
@@ -29,15 +29,23 @@ const appRouter = createBrowserRouter([
   {
     path: "/",
     element: <Applayout />,
-    errorElement: <Error />,
+    errorElement: (
+      <Suspense fallback={<Shimmer />}>
+        <Error />
+      </Suspense>
+    ),
     children: [
       {
         path: "/",
-        element: <Body />,
+        element: <Body brandName={{ name: "Foodex" }} />,
       },
       {
         path: "/about",
-        element: <About />,
+        element: (
+          <Suspense fallback={<Shimmer />}>
+            <About />
+          </Suspense>
+        ),
         children: [
           {
             path: "profile",
@@ -46,17 +54,25 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/contact",
-        element: <ContactUS />,
+        element: (
+          <Suspense fallback={<Shimmer />}>
+            <ContactUS />
+          </Suspense>
+        ),
       },
       {
         path: "/restaurants/:restroId",
-        element: <RestaurantMenu />,
-      },
-      {
-        path: "/instamart",
         element: (
           <Suspense fallback={<Shimmer />}>
-            <Instamart />
+            <RestaurantMenu />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/faqs",
+        element: (
+          <Suspense fallback={<Shimmer />}>
+            <FAQ />
           </Suspense>
         ),
       },

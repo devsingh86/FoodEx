@@ -41,11 +41,11 @@ const NavigationBar = () => {
         </li>
         <li className="nav-item">
           <NavLink
-            to="/instamart"
-            title="Instamart"
+            to="/faqs"
+            title="FAQs"
             className={({ isActive }) => (isActive ? "active" : "")}
           >
-            Instamart
+            FAQs
           </NavLink>
         </li>
       </ul>
