@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/logo/foodex-white.png";
+import userContext from "../utils/userContext";
 
 function isLoggedIn(isLogged) {
   return (isLogged = isLogged ? false : true);
@@ -8,7 +9,7 @@ function isLoggedIn(isLogged) {
 
 const NavigationBar = () => {
   const [isLogged, setIsLoggged] = useState(false);
-
+  const { user } = useContext(userContext);
   return (
     <>
       <ul className="navbar flyout1">
@@ -59,7 +60,7 @@ const NavigationBar = () => {
                 setIsLoggged(false);
               }}
             >
-              <span className="ri-user-fill"></span> Logout
+              <span className="ri-user-fill"></span> {user.username}
             </a>
           </li>
         ) : (

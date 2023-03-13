@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { filterRestaurant } from "../utils/helper";
 import useOnline from "../utils/useConnectionStatus";
 import { SWIGGY_RESTRO_API } from "../constants";
+import userContext from "../utils/userContext";
 
 const RestaurantList = ({ brandName }) => {
   //all data
@@ -29,12 +30,14 @@ const RestaurantList = ({ brandName }) => {
   }
 
   const isOnline = useOnline();
+  const { user } = useContext(userContext);
 
   if (!isOnline) {
     return (
       <div className="no-results">
         <h3>
-          Looks like you are offline <i className="ri-wifi-off-line"></i>
+          {user.name} Looks like you are offline{" "}
+          <i className="ri-wifi-off-line"></i>
         </h3>
         <p>Please check your internet connection.</p>
       </div>
