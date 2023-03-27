@@ -20,11 +20,6 @@ const RestaurantMenu = () => {
 
   const paiseToRupee = restaurant?.costForTwo / 100;
 
-  //console.log(restaurant);
-  //console.log(menuItems);
-  console.log(filterMenu);
-  //Get data from API
-
   return !restaurant ? (
     <main className="mainContainer">
       <section className="centerAlign">
@@ -89,28 +84,6 @@ const RestaurantMenu = () => {
                 </li>
               ))}
             </ul>
-            {/* <select
-            value={category}
-            onChange={(e) => {
-              setCategory(e.target.value);
-
-              const filterMenu = Object.values(
-                restaurant?.menu?.items
-              ).reduce((filtered, item) => {
-                if (item.category === e.target.value) {
-                  filtered.push(item);
-                }
-                return filtered;
-              }, []);
-              setFilterMenu(filterMenu);
-            }}
-          >
-            {restaurant?.menu?.widgets.map((item, index) => (
-              <option key={index} value={item.name}>
-                {item.name}
-              </option>
-            ))}
-            </select>*/}
 
             <div className="menuWrapper">
               {category != "Recommended" ? (
