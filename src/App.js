@@ -8,10 +8,11 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Shimmer from "./components/Shimmer";
 import ScrollToTop from "./utils/scrollToTop";
 import UserContext from "./utils/userContext";
+import ContactUS from "./components/ContactUs";
 
 const Error = lazy(() => import("./components/Error"));
 const About = lazy(() => import("./components/About"));
-const ContactUS = lazy(() => import("./components/ContactUS"));
+//const ContactUS = lazy(() => import("./components/ContactUS"));
 const RestaurantMenu = lazy(() => import("./components/RestaurantMenu"));
 const FAQ = lazy(() => import("./components/FAQ"));
 

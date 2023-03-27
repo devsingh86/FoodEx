@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import useTitle from "../utils/useTitle";
 
 const ContactUS = () => {
